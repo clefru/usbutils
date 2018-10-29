@@ -13,7 +13,8 @@ AM_LDFLAGS = \
 data_DATA =
 
 bin_PROGRAMS = \
-	lsusb
+	lsusb \
+	usbreset
 
 sbin_SCRIPTS =
 
@@ -43,12 +44,14 @@ man_MANS = \
 	lsusb.8	\
 	usb-devices.1
 
+usbreset_SOURCES = \
+	usbreset.c
+
 EXTRA_DIST = \
 	lsusb.8.in \
 	usb-devices.1.in \
 	usb-devices \
 	lsusb.py.in \
-	usbreset.c \
 	LICENSES/GPL-2.0.txt \
 	LICENSES/GPL-3.0.txt
 

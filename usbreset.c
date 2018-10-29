@@ -144,10 +144,10 @@ static void reset_device(struct usbentry *dev)
 	snprintf(path, sizeof(path) - 1, "/dev/bus/usb/%03d/%03d",
 		dev->bus_num, dev->dev_num);
 
-	printf("Resetting %s ... ", dev->product_name);
+	printf("Resetting %s (best effort) ... ", dev->product_name);
 
 	fd = open(path, O_WRONLY);
-	if (fd  > -1) {
+	if (fd > -1) {
 		if (ioctl(fd, USBDEVFS_RESET, 0) < 0)
 			printf("failed [%s]\n", strerror(errno));
 		else
